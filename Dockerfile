@@ -10,7 +10,7 @@ RUN apk add g++ make mysql-dev tzdata
 # コンテナを起動した時の作業ディレクトリを/appにする
 WORKDIR /app
 
-# PC上のGemfileを/appにコピー
+# ビルドコンテキスト上のGemfileを/appにコピー
 COPY Gemfile .
 
 # bundle installでGemfileに記述されているgemをインストール
