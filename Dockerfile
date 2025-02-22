@@ -12,6 +12,7 @@ WORKDIR /app
 
 # ビルドコンテキスト上のGemfileを/appにコピー
 COPY Gemfile .
+COPY Gemfile.lock .
 
 # bundle installでGemfileに記述されているgemをインストール
 RUN bundle install
