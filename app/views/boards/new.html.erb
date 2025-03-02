@@ -1,0 +1,21 @@
+<div class="d-flex align-items-center">
+  <h1>記事作成</h1>
+  <div class="ms-auto boards__linkBox">
+    <a href="/boards" class="btn btn-outline-dark">記事一覧</a>
+  </div>
+</div>
+<%= form_with model: @board do |form| %>
+  <div class="mb-3">
+    <%= form.label :author_name, '名前' %>
+    <%= form.text_field :author_name, class: 'form-control' %>
+  </div>
+  <div class="mb-3">
+    <%= form.label :title, 'タイトル' %>
+    <%= form.text_field :title, class: 'form-control' %>
+  </div>
+  <div class="mb-3">
+    <%= form.label :body, '本文' %>
+    <%= form.text_area :body, class: 'form-control', rows: 10 %>
+  </div>
+  <%= form.submit '保存', class: 'btn btn-primary'%>
+<% end %>
