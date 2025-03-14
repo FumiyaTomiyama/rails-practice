@@ -39,6 +39,9 @@ module App
     # Don't generate system test files.
     config.generators.system_tests = nil
 
+    # 日本語化対応
+    config.i18n.default_locale = :ja
+
     # Timezone
     config.time_zone = 'Tokyo'
   end
