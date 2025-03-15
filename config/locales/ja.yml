@@ -4,6 +4,9 @@ ja:
       board:
         title: タイトル
         body: 本文
+      comment:
+        name: ニックネーム
+        comment: コメント
   views:
     pagination:
       first: 最初

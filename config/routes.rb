@@ -11,4 +11,5 @@ Rails.application.routes.draw do
 
   # Defines the root path route ("/")
   resources :boards
+  resources :comments, only: %i[create destroy]
 end
