@@ -45,7 +45,7 @@ gem "thruster", require: false
 
 gem "bootstrap", "5.3.1"
 gem "sassc-rails", "2.1.2"
-gem "mini_racer", "0.8.0"
+gem "mini_racer", "0.18.0"
 gem "kaminari"
 gem "bootstrap5-kaminari-views"
 gem "rails-i18n"
