@@ -1,5 +1,6 @@
 class BoardsController < ApplicationController
     before_action :set_target_board, only: %i[show edit update destroy]
+    before_action :basic_auth, only: %i[new edit destroy]
 
     def index
         @boards = params[:tag_id].present? ? Tag.find(params[:tag_id]).boards : Board.all
@@ -28,6 +29,7 @@ class BoardsController < ApplicationController
     end
 
     def edit
+        flash[:edit] = "yes"
     end
 
     def update
@@ -54,5 +56,11 @@ class BoardsController < ApplicationController
 
     def set_target_board
         @board = Board.find(params[:id])
+    end
+
+    def basic_auth
+        authenticate_or_request_with_http_basic do |username, password|
+            username == ENV["BASIC_AUTH_USER"] && password == ENV["BASIC_AUTH_PASSWORD"]
+        end
     end
 end

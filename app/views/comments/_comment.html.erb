@@ -3,6 +3,8 @@
   <div class="p-comment__bottomLine">
     <span><%= comment.name %></span>
     <span><%= comment.created_at.strftime('%Y年 %m月 %d日 %H時 %M分')  %></span>
-    <span><%= button_to '削除', comment, class: 'btn btn-outline-dark', method: :delete %></span>
   </div>
+  <% if flash[:edit] %>
+    <%= button_to '削除', comment, class: 'btn btn-danger', method: :delete %>
+  <% end %>
 </div>
