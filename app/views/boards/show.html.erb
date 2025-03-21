@@ -12,7 +12,7 @@
 
 <div class="p-comment__list">
   <div class="p-comment__listTitle">コメント</div>
-  <%= render @board.comments %>
+  <%= render @comments %>
+  <%= paginate @comments, theme: 'bootstrap-5' %>
 </div>
-
 <%= render partial: 'comments/form', locals: { comment: @comment } %>

@@ -4,7 +4,7 @@ class BoardsController < ApplicationController
 
     def index
         @boards = params[:tag_id].present? ? Tag.find(params[:tag_id]).boards : Board.all
-        @boards = @boards.page(params[:page]).per(10)
+        @boards = @boards.order(created_at: :desc).page(params[:page]).per(10)
     end
 
     def new
@@ -26,6 +26,8 @@ class BoardsController < ApplicationController
 
     def show
         @comment = Comment.new(board_id: @board.id)
+        @comments = @board.comments
+        @comments = @comments.page(params[:page]).per(5)
     end
 
     def edit
