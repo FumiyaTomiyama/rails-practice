@@ -44,5 +44,8 @@ module App
 
     # Timezone
     config.time_zone = 'Tokyo'
+
+    # バリアントプロセッサをVipsにする
+    config.active_storage.variant_processor = :vips
   end
 end

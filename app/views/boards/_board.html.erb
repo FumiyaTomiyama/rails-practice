@@ -9,3 +9,11 @@
     <p class="card-text"><%= simple_format(board.body) %></p>
   </div>
 </div>
+<% if board.images.attached? %>
+  <div>
+    <% board.images.each do |image| %>
+      <%= image_tag image, size: "381x267" %><br>
+      <%= link_to '表示', image %><br>
+    <% end %>
+  </div>
+<% end %>

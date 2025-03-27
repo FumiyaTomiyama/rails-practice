@@ -50,10 +50,14 @@ class BoardsController < ApplicationController
         redirect_to boards_path
     end
 
+    def delete_image
+        @board = Board.find(params[:id])
+    end
+
     private
 
     def board_params
-        params.require(:board).permit(:name, :title, :body, tag_ids: [])
+        params.require(:board).permit(:name, :title, :body, images: [], tag_ids: [])
     end
 
     def set_target_board

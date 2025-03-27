@@ -10,8 +10,12 @@ Rails.application.routes.draw do
   # get "service-worker" => "rails/pwa#service_worker", as: :pwa_service_worker
 
   # Defines the root path route ("/")
-  root 'home#index'
-  resources :boards
+  root to: redirect('/boards')
+  resources :boards do
+    member do
+      get 'delete_image'
+    end
+  end
   resources :comments, only: %i[create destroy]
 
 end

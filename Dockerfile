@@ -5,7 +5,7 @@ FROM ruby:3.3.6-alpine
 RUN apk update
 
 # パッケージをインストールするコマンドを実行
-RUN apk add g++ make mysql-dev tzdata
+RUN apk add g++ make mysql-dev tzdata vips
 
 # コンテナを起動した時の作業ディレクトリを/appにする
 WORKDIR /app

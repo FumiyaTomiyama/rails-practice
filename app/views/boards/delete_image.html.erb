@@ -1,0 +1,15 @@
+<div class="d-flex align-items-center">
+  <h1>画像削除</h1>
+  <div class="ms-auto boards__linkBox">
+    <%= link_to '一覧', boards_path, class: 'btn btn-primary' %>
+  </div>
+</div>
+
+
+  <% if @board.images.attached? %>
+  <div>
+    <% @board.images.each do |image| %>
+      <%= image.purge %>
+    <% end %>
+  </div>
+  <% end %>

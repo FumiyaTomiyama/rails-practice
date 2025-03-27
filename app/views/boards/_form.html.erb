@@ -20,6 +20,13 @@
       </div>
     <% end %>
   </div>
-
+  <% if board.images.attached? %>
+  <div>
+    <% board.images.each do |image| %>
+      <%= image_tag image, size: "381x267" %><br>
+    <% end %>
+  </div>
+  <% end %>
+  <%= render 'image_upload', form: form %>
   <%= form.submit '保存', class: 'btn btn-primary'%>
 <% end %>
