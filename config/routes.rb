@@ -13,9 +13,8 @@ Rails.application.routes.draw do
   root to: redirect('/boards')
   resources :boards do
     member do
-      get 'delete_image'
+      get 'image'
     end
   end
   resources :comments, only: %i[create destroy]
-
 end

@@ -1,0 +1,155 @@
+<div class="my-3" data-controller="previews">
+    <%= form.label :"画像①" %><br>
+    <%= form.file_field :images,
+    direct_uploade: true,
+    multiple: true ,
+    onchange: 'previewImage01(event)' %><br>
+    <%= image_tag '', id: 'image_preview01', style: 'max-width: 100px;' %><br>
+
+    <%= form.label :"画像②" %><br>
+    <%= form.file_field :images,
+    direct_uploade: true,
+    multiple: true ,
+    onchange: 'previewImage02(event)' %><br>
+    <%= image_tag '', id: 'image_preview02', style: 'max-width: 100px;' %><br>
+
+    <%= form.label :"画像③" %><br>
+    <%= form.file_field :images,
+    direct_uploade: true,
+    multiple: true ,
+    onchange: 'previewImage03(event)' %><br>
+    <%= image_tag '', id: 'image_preview03', style: 'max-width: 100px;' %><br>
+
+    <%= form.label :"画像④" %><br>
+    <%= form.file_field :images,
+    direct_uploade: true,
+    multiple: true ,
+    onchange: 'previewImage4(event)' %><br>
+    <%= image_tag '', id: 'image_preview04', style: 'max-width: 100px;' %><br>
+
+    <%= form.label :"画像⑤" %><br>
+    <%= form.file_field :images,
+    direct_uploade: true,
+    multiple: true ,
+    onchange: 'previewImage5(event)' %><br>
+    <%= image_tag '', id: 'image_preview05', style: 'max-width: 100px;' %><br>
+
+    <%= form.label :"画像⑥" %><br>
+    <%= form.file_field :images,
+    direct_uploade: true,
+    multiple: true ,
+    onchange: 'previewImage6(event)' %><br>
+    <%= image_tag '', id: 'image_preview06', style: 'max-width: 100px;' %><br>
+
+    <%= form.label :"画像⑦" %><br>
+    <%= form.file_field :images,
+    direct_uploade: true,
+    multiple: true ,
+    onchange: 'previewImage7(event)' %><br>
+    <%= image_tag '', id: 'image_preview07', style: 'max-width: 100px;' %><br>
+
+    <%= form.label :"画像⑧" %><br>
+    <%= form.file_field :images,
+    direct_uploade: true,
+    multiple: true ,
+    onchange: 'previewImage8(event)' %><br>
+    <%= image_tag '', id: 'image_preview08', style: 'max-width: 100px;' %><br>
+
+    <%= form.label :"画像⑨" %><br>
+    <%= form.file_field :images,
+    direct_uploade: true,
+    multiple: true ,
+    onchange: 'previewImage9(event)' %><br>
+    <%= image_tag '', id: 'image_preview09', style: 'max-width: 100px;' %><br>
+</div>
+
+<script>
+  function previewImage01(event) {
+    const reader = new FileReader();
+    reader.onload = function() {
+      const preview = document.getElementById('image_preview01');
+      preview.src = reader.result;
+    }
+    reader.readAsDataURL(event.target.files[0]);
+  }
+</script>
+<script>
+  function previewImage02(event) {
+    const reader = new FileReader();
+    reader.onload = function() {
+      const preview = document.getElementById('image_preview02');
+      preview.src = reader.result;
+    }
+    reader.readAsDataURL(event.target.files[0]);
+  }
+</script>
+<script>
+  function previewImage03(event) {
+    const reader = new FileReader();
+    reader.onload = function() {
+      const preview = document.getElementById('image_preview03');
+      preview.src = reader.result;
+    }
+    reader.readAsDataURL(event.target.files[0]);
+  }
+</script>
+<script>
+  function previewImage04(event) {
+    const reader = new FileReader();
+    reader.onload = function() {
+      const preview = document.getElementById('image_preview04');
+      preview.src = reader.result;
+    }
+    reader.readAsDataURL(event.target.files[0]);
+  }
+</script>
+<script>
+  function previewImage05(event) {
+    const reader = new FileReader();
+    reader.onload = function() {
+      const preview = document.getElementById('image_preview05');
+      preview.src = reader.result;
+    }
+    reader.readAsDataURL(event.target.files[0]);
+  }
+</script>
+<script>
+  function previewImage06(event) {
+    const reader = new FileReader();
+    reader.onload = function() {
+      const preview = document.getElementById('image_preview06');
+      preview.src = reader.result;
+    }
+    reader.readAsDataURL(event.target.files[0]);
+  }
+</script>
+<script>
+  function previewImage07(event) {
+    const reader = new FileReader();
+    reader.onload = function() {
+      const preview = document.getElementById('image_preview07');
+      preview.src = reader.result;
+    }
+    reader.readAsDataURL(event.target.files[0]);
+  }
+</script>
+<script>
+  function previewImage08(event) {
+    const reader = new FileReader();
+    reader.onload = function() {
+      const preview = document.getElementById('image_preview08');
+      preview.src = reader.result;
+    }
+    reader.readAsDataURL(event.target.files[0]);
+  }
+</script>
+<script>
+  function previewImage09(event) {
+    const reader = new FileReader();
+    reader.onload = function() {
+      const preview = document.getElementById('image_preview09');
+      preview.src = reader.result;
+    }
+    reader.readAsDataURL(event.target.files[0]);
+  }
+</script>

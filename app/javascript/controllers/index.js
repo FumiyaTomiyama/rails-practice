@@ -3,3 +3,15 @@
 // ./bin/rails generate stimulus controllerName
 
 import { application } from "./application"
+import PreviewsController from "./previews_controller"
+
+application.register("previws", PreviewsController)
+// Eager load all data controllers defined in the import map under controllers/**/*_controller
+import controllers from "./**/*_controller"
+for (const name in controllers) {
+  application.register(name, controllers[name])
+}
+
+// Lazy load controllers as they appear in the DOM (remember not to preload them in import map!)
+// import { eagerLoadControllersFrom } from "@hotwired/stimulus-loading"
+// eagerLoadControllersFrom("controllers", application)

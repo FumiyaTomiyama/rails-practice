@@ -1,6 +1,6 @@
 class BoardsController < ApplicationController
-    before_action :set_target_board, only: %i[show edit update destroy]
-    before_action :basic_auth, only: %i[new edit destroy]
+    before_action :set_target_board, only: %i[show edit update destroy image]
+    before_action :basic_auth, only: %i[new edit destroy image]
 
     def index
         @boards = params[:tag_id].present? ? Tag.find(params[:tag_id]).boards : Board.all
@@ -31,7 +31,7 @@ class BoardsController < ApplicationController
     end
 
     def edit
-        flash[:edit] = "yes"
+        flash.now[:edit] = "yes"
     end
 
     def update
@@ -50,8 +50,7 @@ class BoardsController < ApplicationController
         redirect_to boards_path
     end
 
-    def delete_image
-        @board = Board.find(params[:id])
+    def image
     end
 
     private

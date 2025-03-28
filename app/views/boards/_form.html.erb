@@ -9,6 +9,20 @@
     <%= form.label :body, '本文' %>
     <%= form.text_area :body, class: 'form-control', rows: 10 %>
   </div>
+  <% if flash[:edit] %>
+    <% if board.images.attached? %>
+    <div>
+      <% board.images.each do |image| %>
+        <%= image_tag image, size: "381x267" %><br>
+        <%= link_to '表示', image %><br>
+      <% end %>
+    </div>
+    <% end %>
+  <% end %>
+  <% if flash[:edit] %>
+  <% else %>
+    <%= render 'image_preview', form: form, board: board %>
+  <% end %>
   <div class="form-group">
     <span>タグ</span>
     <%= form.collection_check_boxes(:tag_ids, Tag.all, :id, :name) do |tag| %>
@@ -20,13 +34,5 @@
       </div>
     <% end %>
   </div>
-  <% if board.images.attached? %>
-  <div>
-    <% board.images.each do |image| %>
-      <%= image_tag image, size: "381x267" %><br>
-    <% end %>
-  </div>
-  <% end %>
-  <%= render 'image_upload', form: form %>
   <%= form.submit '保存', class: 'btn btn-primary'%>
 <% end %>
