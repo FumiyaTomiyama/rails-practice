@@ -50,6 +50,7 @@ gem "kaminari"
 gem "bootstrap5-kaminari-views"
 gem "rails-i18n"
 gem "dotenv-rails"
+gem "aws-sdk-s3"
 
 
 group :development, :test do
